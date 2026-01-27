@@ -1,4 +1,5 @@
 const http=require('http');
+const fs=require('fs');
 
 const server=http.createServer((req,res)=>{
 
@@ -41,9 +42,14 @@ const server=http.createServer((req,res)=>{
     res.write('</html>');
 
     return res.end();
-}
+}else if(req.url.toLowerCase()==="/submit-details" &&
+   req.method=="POST"){
+    fs.writeFileSync('user.txt', 'pavan');
+    res.statusCode=302;
+    res.setHeader('Location','/')
+   }
 res.setHeader('content-type','text/html');
-res.write(`<html> 
+res.write(`<html>   
              <head><title>complet</title></head>
              <body><h1>Like/Share<h1></body>
              </html`);
