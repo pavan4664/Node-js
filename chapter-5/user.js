@@ -53,7 +53,13 @@ const server=http.createServer((req,res)=>{
   req.on("end",()=>{
     const fullBody=Buffer.concat(body).toString();
     console.log(fullBody);
-  })
+    const parameter=new URLSearchParams(fullBody);//decod  data
+    const bodyObj={};
+    for (const [key,val]of parameter.entries()){
+      bodyObj[key]=val;
+    }
+    console.log(bodyObj);
+  });
     fs.writeFileSync('user.txt', 'pavan');
     res.statusCode=302;
     res.setHeader('Location','/')
