@@ -1,8 +1,8 @@
-const http=require('http');
+
 const fs=require('fs');
 const body=[];
 
-const server=http.createServer((req,res)=>{
+const userRequestHandler=(req,res)=>{
 
   // console.log(req.url,req.method,req.headers);
   if(req.url==='/'){
@@ -10,17 +10,7 @@ const server=http.createServer((req,res)=>{
     res.write('<html>');
     res.write('<head><title>Complete coding</title></head>')
     res.write('<body><h1>enter information</h1>')
-    // res.write('<form action="/submit-details " method="post">');//get
-    // res.write('<input type="text" name="username" placeholder="enter name"><br><br>');
-
-
-    // res.write('<label for="male">Male</label>');
-    // res.write('<input type="radio" id="male" name="gender" value="male"/>');
-
-    // res.write('<label for="female">female</label>');
-    // res.write('<input type="radio" id="female" name="gender" value="female"/><br>');
-    // res.write('<input type="submit" value="submit">');
-    // res.write('</form>');
+   
     res.write(`
   <form action="/submit-details" method="POST">
     <input type="text" name="username" placeholder="enter name"><br><br>
@@ -60,7 +50,7 @@ const server=http.createServer((req,res)=>{
     // }
 
     const bodyObj=Object.fromEntries(parameter);
-    console.log()
+    console.log(bodyObj);
     fs.writeFileSync('user.txt', JSON.stringify(bodyObj));
 
 
@@ -75,9 +65,6 @@ res.write(`<html>
              <body><h1>Like/Share<h1></body>
              </html`);
              res.end();
-});
+};
 
-const port=3001;
-server.listen(port,()=>{
-  console.log(`server runing in address http://localhost:${port}`);
-} ); 
+module.exports=userRequestHandler;
