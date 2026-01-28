@@ -60,10 +60,12 @@ const server=http.createServer((req,res)=>{
     // }
 
     const bodyObj=Object.fromEntries(parameter);
-    
-    console.log(bodyObj);
+    console.log()
+    fs.writeFileSync('user.txt', JSON.stringify(bodyObj));
+
+
   });
-    fs.writeFileSync('user.txt', 'pavan');
+   
     res.statusCode=302;
     res.setHeader('Location','/')
    }
