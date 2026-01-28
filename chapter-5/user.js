@@ -54,10 +54,13 @@ const server=http.createServer((req,res)=>{
     const fullBody=Buffer.concat(body).toString();
     console.log(fullBody);
     const parameter=new URLSearchParams(fullBody);//decod  data
-    const bodyObj={};
-    for (const [key,val]of parameter.entries()){
-      bodyObj[key]=val;
-    }
+    // const bodyObj={};
+    // for (const [key,val]of parameter.entries()){
+    //   bodyObj[key]=val;
+    // }
+
+    const bodyObj=Object.fromEntries(parameter);
+    
     console.log(bodyObj);
   });
     fs.writeFileSync('user.txt', 'pavan');
