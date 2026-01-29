@@ -6,7 +6,7 @@ const sumRequestHand=(req,res)=>{
     const bodyStr=Buffer.concat(body).toString();
     const params=new URLSearchParams(bodyStr);
     const bodyObj=Object.fromEntries(params);
-    const result=Number(bodyObj.first)+Number(bodyObj.second);
+    const result=Number(bodyObj.first)-Number(bodyObj.second);
     console.log(result);
      res.setHeader('content-type','text/html');
       res.write(`
