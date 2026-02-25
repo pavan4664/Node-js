@@ -15,3 +15,4 @@ fs.readFile('user.txt', 'utf8', (err, dataAsync) => {
 });
 
 console.log('5. End of script');
+

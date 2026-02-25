@@ -5,7 +5,7 @@ const hostRouter=express.Router();
 hostRouter.get("/add-home",(req,res,next)=>{
   
   res.send(`<h1>Rgister your self</h1>
-              <form action="/add-home" method="POST">
+              <form action="/host/add-home" method="POST">
               <input type="text" name="housename" placeholder="enter the number of house"/>
               <input type="submit"/>
                </form>`);

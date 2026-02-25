@@ -15,7 +15,9 @@ const sumRequestHand=(req,res)=>{
       <body><h1>sum is ${result}</h1>
       </body>
       </html>`);
+
   });
+  return res.end();
  
 }
 exports.sumRequestHand=sumRequestHand;
