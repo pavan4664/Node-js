@@ -25,9 +25,16 @@
     </h2>
 
     <div class="bg-white p-6 rounded-lg shadow-md max-w-md">
-      <p class="text-gray-600">
-        Start adding homes and explore dynamic UI.
-      </p>
+      <h2 class="text-gray-600">
+       Here is registerd homes:
+      </h2>
+      <ul>
+        <% registerd.forEach((home)=>{
+          %><li><%=home.housename %>
+
+          </li>
+        <% }) %>
+      </ul>
     </div>
   </main>
 

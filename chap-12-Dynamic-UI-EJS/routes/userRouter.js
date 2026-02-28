@@ -1,7 +1,7 @@
 //core module
 const path=require('path');
 //local m
-const rootDir=require('../utils/pathUtill');
+// const rootDir=require('../utils/pathUtill');
 
 const {registerd}=require('./hostRouter');
 
@@ -11,7 +11,9 @@ const userRouter=express.Router();
 
 userRouter.get("/",(req,res,next)=>{
   console.log(registerd);
-  res.sendFile(path.join(rootDir,'views','home.html'));
+  // res.sendFile(path.join(rootDir,'views','home.html'));
+
+  res.render('home',{registerd : registerd});
    
 });
 

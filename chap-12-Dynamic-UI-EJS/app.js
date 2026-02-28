@@ -5,7 +5,9 @@ const path=require('path');
 const express=require('express');
 
 const app=express();
+
 const userRouter=require("./routes/userRouter")
+
 const {hostRouter}=require("./routes/hostRouter");
 const rootDir=require('./utils/pathUtill');
 
@@ -15,6 +17,10 @@ app.use((req,res,next)=>{
   console.log(req.url,req.method);
   next();
 });
+
+app.set('view engine','ejs');
+//file name 
+// app.set('viwes','viwes');
 
 app.use(express.urlencoded({ extended: false }));
  
