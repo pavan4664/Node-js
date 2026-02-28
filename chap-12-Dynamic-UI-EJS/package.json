@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tailwind":"tsilwindcss -i ./viwes/input.css -o ./public/output.css --watch",
+    "tailwind": "tsilwindcss -i ./viwes/input.css -o ./public/output.css --watch",
     "start": "nodemon app.js & npm run tailwind"
   },
   "keywords": [],
@@ -13,6 +13,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "ejs": "^4.0.1",
     "express": "^5.2.1"
   },
   "devDependencies": {
