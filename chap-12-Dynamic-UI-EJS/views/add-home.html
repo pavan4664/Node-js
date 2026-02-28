@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Home</title>
+  <link rel="stylesheet" href="/output.css">
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-red-500 text-white p-4 flex justify-between">
+    <a href="/" class="font-semibold hover:underline">Go to Home</a>
+    <a href="/host/add-home" class="font-semibold hover:underline">Add Home</a>
+  </nav>
+
+  <!-- Form Section -->
+  <main class="flex justify-center items-start mt-16 px-4">
+    <div class="bg-white w-full max-w-lg p-8 rounded-lg shadow-md">
+
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+        Register Your Home on AirBnB
+      </h2>
+
+      <form action="/host/add-home" method="POST" class="space-y-4">
+        
+        <input 
+          type="text" 
+          name="housename" 
+          placeholder="Enter your House Name"
+          class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-red-400"
+        />
+
+        <button 
+          type="submit"
+          class="w-full bg-red-500 text-white py-3 rounded-md hover:bg-red-600 transition"
+        >
+          Submit
+        </button>
+
+      </form>
+
+    </div>
+  </main>
+
+</body>
+</html>
