@@ -1,0 +1,28 @@
+<%- include('partials/head')%>
+</head>
+
+<body class="bg-gray-100">
+  <%- include('partials/header')%>
+  
+  <!-- Main Content -->
+  <main class="p-10">
+    <h2 class="text-4xl font-bold text-gray-800 mb-6">
+      Welcome to airbnb
+    </h2>
+
+    <div class="bg-white p-6 rounded-lg shadow-md max-w-2xl">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+        Registered Homes
+      </h2>
+      <ul class="space-y-3">
+        <% registerd.forEach((home)=>{
+          %><li class="bg-gray-50 p-4 rounded-md border border-gray-200 hover:bg-gray-100 transition">
+            <span class="text-gray-700 font-medium"><%=home.housename %></span>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </main>
+
+</body>
+</html>
