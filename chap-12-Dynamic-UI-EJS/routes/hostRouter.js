@@ -11,19 +11,17 @@ const rootDir=require('../utils/pathUtill');
 
 hostRouter.get("/add-home",(req,res,next)=>{
   
-  res.sendFile(path.join(rootDir ,'views','add-home.html'));
+  res.render('add-home',{pageTitle:'Home Added Successfully'});
+});
     
   
-})
+
 const registerd=[];
 hostRouter.post("/add-home",(req,res,next)=>{
   console.log(req.body,req.body.housename);
   registerd.push({housename:req.body.housename});
 
-  
-  
-  res.sendFile(path.join(rootDir,'views','homeAdd.html'));
-  
+    res.render('add-home',{pageTitle:'Home Added Successfully'});
 })
 
 

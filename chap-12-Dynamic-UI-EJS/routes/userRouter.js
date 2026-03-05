@@ -13,7 +13,7 @@ userRouter.get("/",(req,res,next)=>{
   console.log(registerd);
   // res.sendFile(path.join(rootDir,'views','home.html'));
 
-  res.render('home',{registerd : registerd});
+  res.render('home',{registerd : registerd, pageTitle:'air-bnb'});
    
 });
 
