@@ -1,27 +1,66 @@
-<%- include('partials/head')%>
+<%- include('partials/head') %>
+
 </head>
 
 <body class="bg-gray-100">
-  <%- include('partials/header')%>
-  
-  <!-- Main Content -->
-  <main class="p-10">
-    <h2 class="text-4xl font-bold text-gray-800 mb-6">
-      Welcome to airbnb
-    </h2>
+  <%- include('partials/header') %>
 
-    <div class="bg-white p-6 rounded-lg shadow-md max-w-2xl">
-      <h2 class="text-2xl font-semibold text-gray-800 mb-4">
-        Registered Homes
-      </h2>
-      <ul class="space-y-3">
-        <% registerd.forEach((home)=>{
-          %><li class="bg-gray-50 p-4 rounded-md border border-gray-200 hover:bg-gray-100 transition">
-            <span class="text-gray-700 font-medium"><%=home.housename %></span>
-          </li>
-        <% }) %>
-      </ul>
+  <main class="container mx-auto p-10">
+
+```
+<div class="bg-white rounded-lg shadow-md p-6 max-w-4xl mx-auto">
+
+  <h2 class="text-2xl font-bold text-red-500 text-center mb-8">
+    Here are our registered homes:
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <% registerd.forEach(home => { %>
+
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+
+      <!-- Image -->
+      <img
+        src="https://housing-images.n7net.in/4f2250e8/43810102fab0e69010c15ff1ef4ea06b/v0/medium/pacifica_aurum_villas_phase_2-padur-chennai-pacifica_builders_pvt_ltd.jpeg"
+        alt="<%= home.housename %>"
+        class="w-full h-48 object-cover"
+      >
+
+      <!-- Card Body -->
+      <div class="p-4">
+
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">
+          <%= home.housename %>
+        </h3>
+
+        <p class="text-gray-500 text-sm mb-2">
+          <%= home.location %>
+        </p>
+
+        <div class="flex justify-between items-center">
+
+          <span class="text-red-500 font-semibold">
+            Rs<%= home.price %> / night
+          </span>
+
+          <span class="text-yellow-500 text-sm">
+            ⭐ <%= home.rating %>
+          </span>
+
+        </div>
+
+      </div>
+
     </div>
+
+    <% }) %>
+
+  </div>
+
+</div>
+```
+
   </main>
 
 </body>
