@@ -20,7 +20,7 @@ const registerd=[];
 hostRouter.post("/add-home",(req,res,next)=>{
   console.log(req.body);
   registerd.push(req.body);
-    res.render('homeAdd',{pageTitle:'Home Added Successfully',currentPage:'homeAdd'});
+    res.render('homeAdd',{pageTitle:'Home Added Successfully',currentPage:'add-home'});
 })
 
 
